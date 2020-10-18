@@ -13,10 +13,13 @@ function Landing() {
   const [theme, setTheme] = useState<any>(localStorage.getItem('@Happy:theme'));
 
   useEffect(() => {
-    if(theme === '' || theme === null || theme === undefined) {
-      setTheme('light');
-    }
     showToastr("Seja bem vindo ao Happy", "success", toast.POSITION.TOP_LEFT);
+  }, []);
+
+  useEffect(() => {
+    if(theme === '' || theme === null || theme === undefined) {
+      setTheme('dark');
+    }
     console.log(`tema atual ${theme}`);
   }, [theme]);
 

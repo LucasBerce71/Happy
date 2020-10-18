@@ -10,8 +10,9 @@ aside.app-sidebar {
   align-items: center;
 }
 
-aside.app-sidebar img {
+aside.app-sidebar img  {
   width: 48px;
+  animation: logoSidebarAnimation 3s infinite;
 }
 
 aside.app-sidebar footer a,
@@ -31,9 +32,34 @@ aside.app-sidebar footer button {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  animation: buttonAnimation 0.5s infinite;
 }
 
 aside.app-sidebar footer a:hover,
 aside.app-sidebar footer button:hover {
   background: #17D6EB;
+}
+
+@keyframes buttonAnimation {
+  from {
+    transform: scale(1.4, 1.4);
+    opacity: 1
+  }
+
+  to {
+    transform: scale(1, 1);
+    border: 5px solid #f1c40f;
+    opacity: 0
+  }
+}
+
+@keyframes logoSidebarAnimation {
+  from {
+    margin-top: 0px;
+  }
+
+  to {
+    margin-top: 300px
+  }
 }

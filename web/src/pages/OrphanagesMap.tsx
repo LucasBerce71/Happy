@@ -7,7 +7,7 @@ import {
   FiSun,
   FiMoon,
 } from "react-icons/fi";
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { Map, TileLayer, Marker, Popup, ScaleControl } from "react-leaflet";
 
 import mapMarkerImg from "../images/map-marker.svg";
 import mapIcon from "../utils/mapIcon";
@@ -42,7 +42,7 @@ function OrphanagesMap() {
 
   useEffect(() => {
     if (theme === "" || theme === null || theme === undefined) {
-      setTheme("light");
+      setTheme("dark");
     }
   }, [theme]);
 
@@ -101,7 +101,9 @@ function OrphanagesMap() {
               className="map-popup"
             >
               {orphanage.name}
-              <Link to={`/orphanages/${orphanage.id}`}>
+              <Link 
+                to={`/orphanages/${orphanage.id}`}
+              >
                 <FiArrowRight size={20} color="#FFF" />
               </Link>
             </Popup>
