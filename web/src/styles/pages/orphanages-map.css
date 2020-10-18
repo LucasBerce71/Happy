@@ -16,11 +16,15 @@
   justify-content: space-between;
 }
 
+.iconMap {
+  animation: iconFloat 2s infinite;
+}
+
 #page-map aside h2 {
   font-size: 40px;
   font-weight: 800;
   line-height: 42px;
-  margin-top: 64px;
+  margin-top: 50px;
 }
 
 #page-map aside p {
@@ -59,9 +63,121 @@
   align-items: center;
   justify-content: center;
 
-  transition: background-color 0.2s;
+  transition: background-color width height 0.2s;
+  transition: transform 0.2s;
 }
 
 #page-map .create-orphanage:hover {
-background: #17d6eb;
+  background: #17d6eb;
+  transform: scale(2, 2);
+}
+
+#page-map #lightTheme {
+  position: absolute;
+  right: 40px;
+  bottom: 480px;
+
+  z-index: 10;
+
+  width: 64px;
+  height: 64px;
+  background: #FFF;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color width height 0.2s;
+  transition: transform 0.2s;
+}
+
+#page-map #darkTheme {
+  position: absolute;
+  right: 130px;
+  bottom: 480px;
+
+  z-index: 10;
+
+  width: 64px;
+  height: 64px;
+  background: #2c3e50;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color width height 0.2s;
+  transition: transform 0.2s;
+}
+
+#page-map .map-popup .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+#page-map .map-popup .leaflet-popup-content {
+  color: #0089a5;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-map .map-popup .leaflet-popup-content a {
+  width: 40px;
+  height: 40px;
+  background: #15c3d6;
+  box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16); 
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-map .map-popup .leaflet-popup-tip-container {
+  display: none;
+}
+
+#page-map .returnHome button {
+  margin-top: 10px;
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+  outline: none;
+
+  background: #12AFCB;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition: transform 0.2s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: backRoute 3s infinite;
+}
+
+#page-map .returnHome button:hover {
+  background: #17D6EB;
+  transform: scale(2,2);
+}
+
+@keyframes backRoute {
+  from {margin-left:100%;}
+  to{margin-left:0%;}
+}
+
+@keyframes iconFloat {
+  from { transform: scale(2,2); }
+  to { transform: scale(1,1); }
 }
